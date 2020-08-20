@@ -13,3 +13,17 @@ for(let elem of arr) {
 
 if (flag === true) console.log('Да');
   else console.log('Нет');
+
+// Задача определения числа на простое или составное
+
+let num = 31;
+
+let flag = true;
+for (let i = 2; i < num; i++) {
+	if (num % i == 0) {
+		flag = false;
+		break; // выйдем из цикла
+	}
+}
+
+console.log(flag);
