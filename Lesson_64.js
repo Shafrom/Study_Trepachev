@@ -114,7 +114,7 @@ console.log(reversoContext);
 let n = 10; // n - это может быть любое число, факториал которого мы хотим получить
 let result = 1;
 
-  while(n){
-    result *= n--;
+while(n) {
+  result *= n--;
 }
 console.log(result);
