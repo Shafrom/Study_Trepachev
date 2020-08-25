@@ -97,13 +97,14 @@ console.log(sum);
 // Дан массив с числами. Найдите среднее арифметическое его элементов (сумма элементов, делить на количество).
 
 let arr = [108, 7, 3, 9, 5, 16, 4, 13, 76];
-let reversoContext = 0;
 let sum = 0;
 
 for (let elem of arr) {
   sum += elem;
   reversoContext = sum / arr.length;
 }
+
+let reversoContext = sum / arr.length;
 
 console.log(reversoContext);
 
