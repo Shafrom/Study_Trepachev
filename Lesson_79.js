@@ -69,6 +69,7 @@ console.log(str.split('-'));
 let str = '12345';
 
 console.log(str.split(''));
+
 // --------------------------
 
 let str = '123456789';
@@ -80,7 +81,14 @@ for (let elem of newStr) {
 }
 
 console.log(arr);
+
 // --------------------------
+
+let str = '123456789';
+let arr = str.split('').map(elem => +elem);
+console.log(arr);
+
+// ----------------------------
 
 let str = 'roof window step';
 
