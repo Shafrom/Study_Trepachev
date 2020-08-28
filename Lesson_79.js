@@ -80,3 +80,8 @@ for (let elem of newStr) {
 }
 
 console.log(arr);
+// --------------------------
+
+let str = 'roof window step';
+
+console.log(str.split(' ').reverse().join(' '));
