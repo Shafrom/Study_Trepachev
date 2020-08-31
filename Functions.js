@@ -236,7 +236,7 @@ func(10);
 
 function func(num1, num2) {
   let arr = [];
-  for (let i = num1; num1 < num2; i++) {
+  for (let i = num1; i <= num2; i++) {
     arr.push(i);
   }
   return arr;
