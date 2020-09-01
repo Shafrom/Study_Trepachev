@@ -31,7 +31,7 @@ console.log(evenCheck([2, -2, 6, 4, -8]));
 // Сделайте функцию, которая параметром будет принимать число и проверять, что все цифры это числа являются нечетными.
 
 function oddDigCheck(num) {
-  return num.toString().split('').some(elem => +elem % 2 !== 0);
+  return num.toString().split('').every(elem => elem % 2 !== 0);
 }
 
 oddDigCheck(246);
