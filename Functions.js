@@ -173,12 +173,17 @@ console.log(some(arr1));
 // Сделайте функцию getDigitsSum (digit - это цифра), которая параметром будет принимать целое число и возвращать сумму его цифр.
 
 function getDigitsSum(num) {
-  let sum = 0;
-  String(num).split('').map(elem => sum += +elem);
-  return sum;
+  return String(num).split('').reduce((sum, current) => sum + +current, 0);
 }
 
 console.log(getDigitsSum(12345));
+
+
+let arr = [1, 2, 3, 4, 5, 6];
+
+let result = arr.reduce((sum, current) => sum + +current, 0);
+
+console.log(result);
 
 // Задача
 // Реализуйте функцию getDivisors, которая параметром будет принимать число и возвращать массив его делителей, то есть чисел, на которое делится наше число. К примеру, если мы передадим число 24 - мы должны получить массив [1, 2, 3, 4, 6, 12, 24].
@@ -208,8 +213,7 @@ reverseStr('abcdefgh');
 // Сделайте функцию delElem, которая параметрами будет принимать значение и массив и удалять из массива все элементы с таким значением.
 
 function delElem(elem, arr) {
-  arr = arr.filter((n) => {return n != elem});
-  return arr;
+  return arr = arr.filter(n => n != elem);
 }
 
 delElem(23, [23, 23, 3, 5, 23, 7]);
