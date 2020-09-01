@@ -65,3 +65,70 @@ function check(arr) {
 
 console.log(check([2, 2, 3, 4, 5, 5]));
 console.log(check([2, 3, 4, 5, 6, 7]));
+
+
+// Задача
+// Дана следующая функция:
+
+function func(a, b) {
+	if (a == b) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+function func(a, b) {
+	return a == b;
+}
+
+// Задача
+// Дана следующая функция:
+
+function func(a, b) {
+	if (a != b) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+function func(a, b) {
+	return a != b;
+}
+
+// Задача
+// Дана следующая функция:
+
+function func(a, b) {
+	if (a + b >= 10) {
+		return true;
+	} else {
+		return false;
+	}
+}
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+function func(a, b) {
+	return a + b >= 10;
+}
+
+// Задача
+// Дана следующая функция:
+
+function func(num) {
+	if (num >= 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+function func(num) {
+	return num >= 0;
+}
