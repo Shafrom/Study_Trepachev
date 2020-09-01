@@ -12,6 +12,20 @@ function evenCheck(arr) {
 console.log(evenCheck([1, -2, 3, 4, -5]));
 console.log(evenCheck([2, -2, 6, 4, -8]));
 
+// Вариант попроще:
+
+function evenCheck(arr) {
+  return arr.every(elem => elem % 2 === 0);
+}
+
+// Или еще короче:
+
+const evenCheck = arr => arr.every(elem => elem % 2 === 0);
+
+// проверяем:
+console.log(evenCheck([1, -2, 3, 4, -5]));
+console.log(evenCheck([2, -2, 6, 4, -8]));
+
 // Задача
 
 // Сделайте функцию, которая параметром будет принимать число и проверять, что все цифры это числа являются нечетными.
