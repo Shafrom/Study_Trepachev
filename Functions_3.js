@@ -94,6 +94,38 @@ const getFreindly = (min, max) => {
 
 console.log(getFreindly(1, 9000));
 
+// Альтернативный вариант:
+
+function getOwnDivisors(num) {
+  let arr = [];
+  for (let i = 1; i < num; i++) {
+    if (num % i === 0) arr.push(i);
+  }
+  return arr;
+}
+
+function getSum(arr) {
+  return arr.reduce((sum, elem) => sum + elem, 0);
+}
+
+function getFreindly(min, max) {
+  let arr = [];
+  for (; min < max; min++) {
+    let sum = getSum(getOwnDivisors(min));
+    let compare = getSum(getOwnDivisors(sum));
+    if (min === compare && min !== sum) {
+      let tempArr = [];
+      tempArr.push(min, sum);
+      arr.push(tempArr);
+    }
+  }
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i][0] === arr[i + 1].reverse()[0]) arr.splice(i, 1);
+  }
+  return arr;
+}
+
+console.log(getFreindly(1, 9000));
 
 // Задача
 // Совершенное число - целое число, равное сумме всех своих собственных делителей (то есть всех положительных делителей, отличных от самого числа). Сделайте функцию getPerfect, которая будет находить совершенные числа в заданном диапазоне. Проверьте работу функции в промежутке от 1 до 1000.
