@@ -108,43 +108,29 @@ console.log(rangeRand(0, 8));
 
 // Задача на вывод счастливых 6-ти значных билетов в диапазоне от 000001 до 999999
 
+const normalize = (num) => {
+  const str = String(num);
+  let newStr = '';
+  for (let i =0; i < 6 - str.length; i++) {
+    newStr += 0;
+  }
+  return newStr + str;
+}
+
 const getLuckyNumbers = () => {
-	let result = [];
-	for (let i = 1001; i <= 999999; i++) {
-		if (isLucky(i)) result.push(String(i));
+  let result = [];
+  for (let i = 1001; i <= 999999; i++) {
+    const str = normalize(i);
+    if (isLucky(str)) result.push(str);
   }
   return result;
 }
 
-function normalizeLuckyNumbers(getLuckyNumbers) {
-  let final = [];
-  for (let elem of getLuckyNumbers) {
-    if (elem.length === 5) {
-      elem = '0' + elem;
-      final.push(elem);
-    }
-    if (elem.length === 4) {
-      elem = '00' + elem;
-      final.push(elem);
-    }
-  }
-  return final;
-}
-
-function isLucky(num) {
-	let str = normalizeNum(num);
+const isLucky = (num) => {
+	let str = normalize(num);
 	let sum1 = Number(str[0]) + Number(str[1]) + Number(str[2]);
 	let sum2 = Number(str[3]) + Number(str[4]) + Number(str[5]);
 	return sum1 === sum2;
 }
 
-function normalizeNum(num) {
-	let str = String(num);
-	if (str.length === 5) str = '0' + str;
-	if (str.length === 4) str = '00' + str;
-	return str;
-}
-
-console.log(normalizeLuckyNumbers(getLuckyNumbers()));
-
-
+console.log(getLuckyNumbers());
