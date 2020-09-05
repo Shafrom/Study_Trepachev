@@ -105,16 +105,26 @@ function rangeRand(a, b) {
 console.log(rangeRand(0, 8));
 
 
-
+// -------------------------------------------------------------------------------
 // Задача на вывод счастливых 6-ти значных билетов в диапазоне от 000001 до 999999
+// -------------------------------------------------------------------------------
+
+// Функция "нормализации" в простом виде может быть такая:
+
+// const normalize = (num) => {
+//   const str = String(num);
+//   let newStr = '';
+//   for (let i =0; i < 6 - str.length; i++) {
+//     newStr += 0;
+//   }
+//   return newStr + str;
+// }
+
+// А может быть немного укорочена вот так:
 
 const normalize = (num) => {
-  const str = String(num);
-  let newStr = '';
-  for (let i =0; i < 6 - str.length; i++) {
-    newStr += 0;
-  }
-  return newStr + str;
+	const str = String(num);
+  return '0'.repeat(6 - str.length) + str;
 }
 
 const getLuckyNumbers = () => {
