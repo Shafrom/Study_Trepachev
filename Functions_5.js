@@ -129,6 +129,8 @@ const result = each(arr, (elem, index) => elem * index > 10);
 
 //-------------------------------------------------------
 
+// Числа Фибоначчи с использованием рекурсии:
+
 const fib = (length, arr = [1, 1]) => {
 	if (arr.length >= length + 1) return arr.reverse().slice(1);
   const [a, b] = arr;
