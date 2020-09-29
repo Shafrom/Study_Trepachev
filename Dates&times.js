@@ -199,7 +199,7 @@ fridayThe13th(2020);
 
 const whichYear = monthAgo => {
   let now = new Date();
-  let countDate = new Date(now.getFullYear(), now.getMonth() - monthAgo, now.getDate());
+  let countDate = new Date(now.getFullYear(), now.getMonth() - monthAgo);
   let result = countDate.getFullYear();
   return result;
 }
@@ -209,7 +209,14 @@ console.log(whichYear(10));
 // Задача
 // Определите, какой день недели будет в последнем дне текущего месяца.
 
+const whichWeekDay = () => {
+  let now = new Date();
+  let daysInMonth = 32 - new Date(now.getFullYear(), now.getMonth(), 32).getDate();
+  let weekDay = new Date(now.getFullYear(), now.getMonth(), daysInMonth).getDay();
+  return weekDay;
+}
 
+console.log(whichWeekDay());
 
 // Задача
 // Определите, сколько дней осталось до конца месяца года.
