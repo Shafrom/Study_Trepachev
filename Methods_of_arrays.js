@@ -382,12 +382,3 @@ function func({color = 'black', width, height}) {
 }
 
 func( {color: 'red', width: 400, height: 500} );
-
-let num = 123;
-let str = 'Hello';
-let bul = true;
-let test = [num, str, bul];
-
-alert(test); // 123, Hello, true
-bul = false;
-alert(test); // 123, Hello, true

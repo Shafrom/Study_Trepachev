@@ -197,8 +197,19 @@ fridayThe13th(2020);
 // Задача
 // Определите, какой год был 3 месяца назад.
 
+const whichYear = monthAgo => {
+  let now = new Date();
+  let countDate = new Date(now.getFullYear(), now.getMonth() - monthAgo, now.getDate());
+  let result = countDate.getFullYear();
+  return result;
+}
+
+console.log(whichYear(10));
+
 // Задача
 // Определите, какой день недели будет в последнем дне текущего месяца.
+
+
 
 // Задача
 // Определите, сколько дней осталось до конца месяца года.
