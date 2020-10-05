@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Tasks</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css" />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <h3>Задача</h3>
+    <p>Даны 3 кнопки:</p>
+    <input id="button1" type="submit" />
+    <input id="button2" type="submit" />
+    <input id="button3" type="submit" />
+    <p>
+      Сделайте так, чтобы по клику на первую кнопку на экран выводилось число 1, по клику на вторую - число 2, а по
+      клику на третью - число 3.
+    </p>
+    <h3>Задача</h3>
+    <p>Дана кнопка. По двойному клику по ней выведите на экран какое-нибудь сообщение.</p>
+    <input id="button4" type="submit" />
+    <h3>Задача</h3>
+    <p>Дана кнопка. По наведению на нее выведите на экран какое-нибудь сообщение.</p>
+    <input id="button5" type="submit" />
+    <h3>Задача</h3>
+    <p>Дана кнопка. По уходу с нее выведите на экран какое-нибудь сообщение.</p>
+    <input id="button6" type="submit" />
+    <h3>Задача</h3>
+    <p>Дана кнопка. По клику на нее выведите число 1, а по двойному клику - число 2.</p>
+    <input id="button7" type="submit" />
+    <h3>Задача</h3>
+    <p>Даны 5 абзацев:</p>
+    <p id="elem1">text</p>
+    <p id="elem2">text</p>
+    <p id="elem3">text</p>
+    <p id="elem4">text</p>
+    <p id="elem5">text</p>
+    <p>Дана следующая функция:</p>
+    <pre>
+      <code class='lang-js'>
+        function func() {
+          alert('message');
+        }
+      </code>
+    </pre>
+    <p>Привяжите эту функцию ко всем 5-ти абзацам.</p>
+    <script>
+      let button1 = document.querySelector('#button1');
+      button1.addEventListener('click', () => alert('1'));
+
+      let button2 = document.querySelector('#button2');
+      button2.addEventListener('click', () => alert('2'));
+
+      let button3 = document.querySelector('#button3');
+      button3.addEventListener('click', () => alert('3'));
+
+      let button4 = document.querySelector('#button4');
+      button4.addEventListener('click', () => alert('Привет! Вы нажали на кнопку!'));
+
+      let button5 = document.querySelector('#button5');
+      button5.addEventListener('mouseover', () => alert('Привет! Вы навели курсор на кнопку!'));
+
+      let button6 = document.querySelector('#button6');
+      button6.addEventListener('mouseout', () => alert('Привет! Вы убрали курсор с кнопки!'));
+
+      let button7 = document.querySelector('#button7');
+      button7.addEventListener('click', () => alert('1'));
+      button7.addEventListener('dblclick', () => alert('2'));
+
+      let elem1 = document.querySelector('#elem1');
+      let elem2 = document.querySelector('#elem2');
+      let elem3 = document.querySelector('#elem3');
+      let elem4 = document.querySelector('#elem4');
+      let elem5 = document.querySelector('#elem5');
+      elem1.addEventListener('click', func);
+      elem2.addEventListener('click', func);
+      elem3.addEventListener('click', func);
+      elem4.addEventListener('click', func);
+      elem5.addEventListener('click', func);
+
+      function func() {
+        alert('message');
+      }
+    </script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>
