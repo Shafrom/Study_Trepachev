@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Tasks</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css" />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <h3>Задача</h3>
+    <p>
+      Даны два абзаца, содержащие своим текстом какие-то числа, и кнопка. По нажатию на кнопку выведите на экран сумму
+      хранящихся чисел.
+    </p>
+    <p class="p1">10</p>
+    <p class="p2">20</p>
+    <button class="button1">Push</button>
+    <h3>Решение</h3>
+    <pre><code>
+      let p1 = document.querySelector('.p1').textContent;
+      let p2 = document.querySelector('.p2').textContent;
+      let button = document.querySelector('.button1');
+      button.addEventListener('click', function () {
+        alert(+p1 + +p2);
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Даны два абзаца и две кнопки. Пусть нажатие на первую кнопку выводит текст первого абзаца, а нажатие на вторую
+      кнопку - текст второго абзаца.
+    </p>
+    <p class="p3">Привет!</p>
+    <button class="button2">Push me</button>
+    <p class="p4">Пока!</p>
+    <button class="button3">Push me</button>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p3 = document.querySelector('.p3').textContent;
+      let p4 = document.querySelector('.p4').textContent;
+      let button2 = document.querySelector('.button2');
+      let button3 = document.querySelector('.button3');
+      button2.addEventListener('click', () => alert(p3));
+      button3.addEventListener('click', () => alert(p4));
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Дан абзац и две кнопки. По нажатию на первую кнопку запишите в абзац слово 'привет', а по нажатию на вторую кнопку
+      - слово 'пока'.
+    </p>
+    <p class="p5">Какой-то текст</p>
+    <button class="button4">Push me</button>
+    <p class="p6">Какой-то текст</p>
+    <button class="button5">Push me</button>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p5 = document.querySelector('.p5');
+      let p6 = document.querySelector('.p6');
+      let button4 = document.querySelector('.button4');
+      let button5 = document.querySelector('.button5');
+      button4.addEventListener('click', () => (p5.textContent = 'Привет'));
+      button5.addEventListener('click', () => (p6.textContent = 'Пока'));
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Даны 3 абзаца с текстом. По нажатию на первый абзац запишите в его текст число 1, по нажатию на второй абзац
+      запишите в его текст число 2, а по нажатию на третий - запишите в его текст число 3.
+    </p>
+    <p class="p7">Какой-то изменяемый текст</p>
+    <p class="p8">Какой-то изменяемый текст</p>
+    <p class="p9">Какой-то изменяемый текст</p>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p7 = document.querySelector('.p7');
+      p7.addEventListener('click', () => (p7.textContent = 1));
+      let p8 = document.querySelector('.p8');
+      p8.addEventListener('click', () => (p8.textContent = 2));
+      let p9 = document.querySelector('.p9');
+      p9.addEventListener('click', () => (p9.textContent = 3));
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Дан абзац и кнопка. В абзаце записано какое-то число. По нажатию на кнопку возведите значение абзаца в квадрат и
+      запишите его обратно.
+    </p>
+    <p class="p10">3</p>
+    <button class="button6">Push me</button>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p10 = document.querySelector('.p10');
+      let button6 = document.querySelector('.button6');
+      button6.addEventListener('click', () => (p10.textContent = (+p10.textContent) ** 2));
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Дан абзац с числом и кнопка. По нажатию на кнопку прибавьте к значению абзаца единицу и запишите полученное число
+      обратно.
+    </p>
+    <p class="p11">1</p>
+    <button class="button7">Push me</button>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p11 = document.querySelector('.p11');
+      let button7 = document.querySelector('.button7');
+      button7.addEventListener('click', () => (p11.textContent = +p11.textContent + 1));
+    </code></pre>
+    <h3>Задача</h3>
+    <p>Дан абзац с текстом и кнопка. По нажатию на кнопку запишите в конец текста абзаца восклицательный знак.</p>
+    <p class="p12">Ну, привеееет</p>
+    <button class="button8">Push me</button>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p12 = document.querySelector('.p12');
+      let button8 = document.querySelector('.button8');
+      button8.addEventListener('click', () => p12.textContent = p12.textContent + '!');
+    </code></pre>
+    <h3>Задача</h3>
+    <p>Модифицируйте предыдущую задачу так, чтобы восклицательный знак записывался не в конец текста, а в начало.</p>
+    <p class="p13">Ну, привеееет</p>
+    <button class="button9">Push me</button>
+    <h3>Решение:</h3>
+    <pre><code>
+      let p13 = document.querySelector('.p13');
+      let button9 = document.querySelector('.button9');
+      button9.addEventListener('click', () => (p13.textContent = '!' + p13.textContent));
+    </code></pre>
+    <script>
+      let p1 = document.querySelector('.p1').textContent;
+      let p2 = document.querySelector('.p2').textContent;
+      let button = document.querySelector('.button1');
+      button.addEventListener('click', function () {
+        alert(+p1 + +p2);
+      });
+      //--------------------------------------------
+      let p3 = document.querySelector('.p3').textContent;
+      let p4 = document.querySelector('.p4').textContent;
+      let button2 = document.querySelector('.button2');
+      let button3 = document.querySelector('.button3');
+      button2.addEventListener('click', () => alert(p3));
+      button3.addEventListener('click', () => alert(p4));
+      //---------------------------------------------
+      let p5 = document.querySelector('.p5');
+      let p6 = document.querySelector('.p6');
+      let button4 = document.querySelector('.button4');
+      let button5 = document.querySelector('.button5');
+      button4.addEventListener('click', () => (p5.textContent = 'Привет'));
+      button5.addEventListener('click', () => (p6.textContent = 'Пока'));
+      //-----------------------------------------------
+      let p7 = document.querySelector('.p7');
+      p7.addEventListener('click', () => (p7.textContent = 1));
+      let p8 = document.querySelector('.p8');
+      p8.addEventListener('click', () => (p8.textContent = 2));
+      let p9 = document.querySelector('.p9');
+      p9.addEventListener('click', () => (p9.textContent = 3));
+      //------------------------------------------------
+      let p10 = document.querySelector('.p10');
+      let button6 = document.querySelector('.button6');
+      button6.addEventListener('click', () => (p10.textContent = (+p10.textContent) ** 2));
+      //-------------------------------------------------
+      let p11 = document.querySelector('.p11');
+      let button7 = document.querySelector('.button7');
+      button7.addEventListener('click', () => (p11.textContent = +p11.textContent + 1));
+      //-------------------------------------------------
+      let p12 = document.querySelector('.p12');
+      let button8 = document.querySelector('.button8');
+      button8.addEventListener('click', () => (p12.textContent = p12.textContent + '!'));
+      //-------------------------------------------------
+      let p13 = document.querySelector('.p13');
+      let button9 = document.querySelector('.button9');
+      button9.addEventListener('click', () => (p13.textContent = '!' + p13.textContent));
+    </script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

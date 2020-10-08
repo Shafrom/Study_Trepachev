@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Tasks</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css" />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <h3>Задача</h3>
+    <p>Дан следующий инпут:</p>
+    <pre><code class="code1 html">
+    </code></pre>
+    <input id="elem" type="email" />
+    <p>
+      Дана также кнопка. По нажатию на кнопку выведите на экран содержимое атрибута <b>type</b> указанного выше инпута.
+    </p>
+    <button class="button1">Push me</button>
+    <h4>Решение:</h4>
+    <pre><code>
+      let input = document.querySelector('#elem');
+      let button1 = document.querySelector('.button1');
+      button1.addEventListener('click', function () {
+        alert(input.type);
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>Дан следующий инпут:</p>
+    <pre><code class="code2 html"></code></pre>
+    <input id="elem2" type="email" />
+    <p>
+      Дана также кнопка. По нажатию на кнопку запишите в атрибут <b>type</b> значение <b>submit</b> и выведите его на
+      экран.
+    </p>
+    <button class="button2">Push me</button>
+    <p><b>Решение:</b></p>
+    <pre><code>
+      let input2 = document.querySelector('#elem2');
+      let button2 = document.querySelector('.button2');
+      button2.addEventListener('click', function () {
+        alert((input.type = 'submit'));
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Пусть у вас есть ссылка в виде тега <a href="www.google.com" class="a1">a</a>, кнопка и абзац. По нажатию на
+      кнопку выведите в абзац содержимое атрибута href ссылки.
+    </p>
+    <pre><code class="code3 html"></code></pre>
+    <p class="p2">Здесь какой-то текст...</p>
+    <button class="button3">Push me</button>
+    <h4>Решение:</h4>
+    <pre><code>
+      let p2 = document.querySelector('.p2');
+      let a1 = document.querySelector('.a1');
+      let button3 = document.querySelector('.button3');
+      button3.addEventListener('click', function () {
+        p2.textContent = a1.href;
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Пусть у вас есть ссылка и кнопка. По нажатию на кнопку добавьте в конец текста ссылки содержимое ее атрибута
+      <b>href</b>
+      в круглых скобках.
+    </p>
+    <pre><code class="code4 html"></code></pre>
+    <a href="www.google.com" class="a2">Поиск в Google</a>
+    <button class="button4">Push me</button>
+    <h4>Решение:</h4>
+    <pre><code>
+      let a2 = document.querySelector('.a2');
+      let button4 = document.querySelector('.button4');
+      button4.addEventListener('click', function () {
+        a2.textContent += ` (${a2.href})`;
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Пусть у вас есть картинка. Разместите ее на странице в помощью тега <b>img</b>. Пусть даны также кнопка и абзац.
+      Сделайте так, чтобы по клику на кнопку в абзац записался путь к картинки из ее атрибута <b>src</b>.
+    </p>
+    <pre><code class="code5 html"></code></pre>
+    <img src="https://cs11.pikabu.ru/post_img/2019/02/04/12/1549312329147951618.jpg" alt="" class="img1" />
+    <button class="button5">Push me</button>
+    <p class="p3">Здесь будет записан путь картинки из ее атрибута</p>
+    <h4>Решение:</h4>
+    <pre><code>
+      let img1 = document.querySelector('.img1');
+      let p3 = document.querySelector('.p3');
+      let button5 = document.querySelector('.button5');
+      button5.addEventListener('click', function () {
+        p3.textContent = img1.src;
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Дана картинка в теге <b>img</b> и кнопка. По нажатию на кнопку в атрибут <b>width</b> запишите значение 800, а в
+      атрибут <b>height</b> запишите 465.
+    </p>
+    <img src="https://cdnimg.rg.ru/img/content/178/22/40/kotik_d_850.jpg" alt="" class="img2" />
+    <button class="button6">Push me</button>
+    <h4>Решение:</h4>
+    <pre><code>
+      let img2 = document.querySelector('.img2');
+      let button6 = document.querySelector('.button6');
+      button6.addEventListener('click', function () {
+        img2.width = '800';
+        img2.height = '465';
+      });
+    </code></pre>
+    <h3>Задача</h3>
+    <p>
+      Дана картинка в теге <b>img</b> и кнопка. Пусть в атрибуте <b>width</b> задана некоторая ширина. Сделайте кнопку,
+      по нажатию на которую ширина картинки будет увеличиваться в 2 раза.
+    </p>
+    <img src="https://s61.radikal.ru/i172/1101/ea/e78eb016467c.jpg" alt="" class="img3" width="600px" />
+    <button class="button7">Push me</button>
+    <h4>Решение:</h4>
+    <pre><code>
+      let img3 = document.querySelector('.img3');
+      let button7 = document.querySelector('.button7');
+      button7.addEventListener('click', function () {
+        img3.width = '600';
+        img3.width = img3.width * 2;
+        img3.height = '384';
+      });
+    </code></pre>
+    <script>
+      document.querySelector('.code1').textContent = `<input id="elem" type="email">`;
+      let input = document.querySelector('#elem');
+      let button1 = document.querySelector('.button1');
+      button1.addEventListener('click', function () {
+        alert(input.type);
+      });
+      //------------------------------------------------------
+      document.querySelector('.code2').textContent = `<input id="elem2" type="email">`;
+      let input2 = document.querySelector('#elem2');
+      let button2 = document.querySelector('.button2');
+      button2.addEventListener('click', function () {
+        alert((input.type = 'submit'));
+      });
+      //--------------------------------------------------------
+      document.querySelector('.code3').textContent = `<a href='www.google.com'>Поиск в Google</a>`;
+      let p2 = document.querySelector('.p2');
+      let a1 = document.querySelector('.a1');
+      let button3 = document.querySelector('.button3');
+      button3.addEventListener('click', function () {
+        p2.textContent = a1.href;
+      });
+      //----------------------------------------------------------
+      document.querySelector('.code4').textContent = `<a href='www.google.com'>Поиск в Google</a>`;
+      let a2 = document.querySelector('.a2');
+      let button4 = document.querySelector('.button4');
+      button4.addEventListener('click', function () {
+        a2.textContent += ` (${a2.href})`;
+      });
+      //-------------------------------------------------------------
+      document.querySelector(
+        '.code5'
+      ).textContent = `<img src="https://cs11.pikabu.ru/post_img/2019/02/04/12/1549312329147951618.jpg" alt="" />`;
+      let img1 = document.querySelector('.img1');
+      let p3 = document.querySelector('.p3');
+      let button5 = document.querySelector('.button5');
+      button5.addEventListener('click', function () {
+        p3.textContent = img1.src;
+      });
+      //------------------------------------------------------------
+      let img2 = document.querySelector('.img2');
+      let button6 = document.querySelector('.button6');
+      button6.addEventListener('click', function () {
+        img2.width = '800';
+        img2.height = '465';
+      });
+      let img3 = document.querySelector('.img3');
+      let button7 = document.querySelector('.button7');
+      button7.addEventListener('click', function () {
+        img3.width = '600';
+        img3.width = img3.width * 2;
+        img3.height = '384';
+      });
+    </script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

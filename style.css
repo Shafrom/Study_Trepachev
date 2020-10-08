@@ -1,0 +1,15 @@
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.a2 {
+  display: block;
+  margin-bottom: 20px;
+}
+img {
+  display: block;
+  margin-bottom: 20px;
+}
+.img3 {
+  border: 1px solid grey;
+}
