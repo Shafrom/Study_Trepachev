@@ -114,9 +114,9 @@
     <h3>Задача</h3>
     <p>
       Дана картинка в теге <b>img</b> и кнопка. Пусть в атрибуте <b>width</b> задана некоторая ширина. Сделайте кнопку,
-      по нажатию на которую ширина картинки будет увеличиваться в 2 раза.
+      по нажатию на которую ширина картинки будет увеличиваться в 1.2 раза.
     </p>
-    <img src="https://s61.radikal.ru/i172/1101/ea/e78eb016467c.jpg" alt="" class="img3" width="600px" />
+    <img src="https://s61.radikal.ru/i172/1101/ea/e78eb016467c.jpg" alt="" class="img3" width="600px" height="384px" />
     <button class="button7">Push me</button>
     <h4>Решение:</h4>
     <pre><code>
@@ -130,57 +130,76 @@
     </code></pre>
     <script>
       document.querySelector('.code1').textContent = `<input id="elem" type="email">`;
-      let input = document.querySelector('#elem');
-      let button1 = document.querySelector('.button1');
-      button1.addEventListener('click', function () {
-        alert(input.type);
-      });
+      (function () {
+        let input = document.querySelector('#elem');
+        let button1 = document.querySelector('.button1');
+        button1.addEventListener('click', function () {
+          alert(input.type);
+        });
+      })();
       //------------------------------------------------------
       document.querySelector('.code2').textContent = `<input id="elem2" type="email">`;
-      let input2 = document.querySelector('#elem2');
-      let button2 = document.querySelector('.button2');
-      button2.addEventListener('click', function () {
-        alert((input.type = 'submit'));
-      });
+      (function () {
+        let input = document.querySelector('#elem2');
+        let button = document.querySelector('.button2');
+        button.addEventListener('click', function () {
+          alert((input.type = 'submit'));
+        });
+      })();
       //--------------------------------------------------------
       document.querySelector('.code3').textContent = `<a href='www.google.com'>Поиск в Google</a>`;
-      let p2 = document.querySelector('.p2');
-      let a1 = document.querySelector('.a1');
-      let button3 = document.querySelector('.button3');
-      button3.addEventListener('click', function () {
-        p2.textContent = a1.href;
-      });
+      //let p2 = document.querySelector('.p2');
+      //let a1 = document.querySelector('.a1');
+      //let button3 = document.querySelector('.button3');
+      //button3.addEventListener('click', function () {
+      // p2.textContent = a1.href;
+      //});
+      (function () {
+        let p = document.querySelector('.p2');
+        let a = document.querySelector('.a1');
+        let button = document.querySelector('.button3');
+        button.addEventListener('click', function () {
+          p.textContent = a.href;
+        });
+      })();
       //----------------------------------------------------------
       document.querySelector('.code4').textContent = `<a href='www.google.com'>Поиск в Google</a>`;
-      let a2 = document.querySelector('.a2');
-      let button4 = document.querySelector('.button4');
-      button4.addEventListener('click', function () {
-        a2.textContent += ` (${a2.href})`;
-      });
+      (function () {
+        let a = document.querySelector('.a2');
+        let button = document.querySelector('.button4');
+        button.addEventListener('click', function () {
+          a.textContent += ` (${a.href})`;
+        });
+      })();
       //-------------------------------------------------------------
       document.querySelector(
         '.code5'
       ).textContent = `<img src="https://cs11.pikabu.ru/post_img/2019/02/04/12/1549312329147951618.jpg" alt="" />`;
-      let img1 = document.querySelector('.img1');
-      let p3 = document.querySelector('.p3');
-      let button5 = document.querySelector('.button5');
-      button5.addEventListener('click', function () {
-        p3.textContent = img1.src;
-      });
+      (function () {
+        let img = document.querySelector('.img1');
+        let p = document.querySelector('.p3');
+        let button = document.querySelector('.button5');
+        button.addEventListener('click', function () {
+          p.textContent = img.src;
+        });
+      })();
       //------------------------------------------------------------
-      let img2 = document.querySelector('.img2');
-      let button6 = document.querySelector('.button6');
-      button6.addEventListener('click', function () {
-        img2.width = '800';
-        img2.height = '465';
-      });
-      let img3 = document.querySelector('.img3');
-      let button7 = document.querySelector('.button7');
-      button7.addEventListener('click', function () {
-        img3.width = '600';
-        img3.width = img3.width * 2;
-        img3.height = '384';
-      });
+      (function () {
+        let img = document.querySelector('.img2');
+        let button = document.querySelector('.button6');
+        button.addEventListener('click', function () {
+          img.width = '800';
+          img.height = '465';
+        });
+      })();
+      //------------------------------------------------------------
+      (function () {
+        let img = document.querySelector('.img3');
+        let button = document.querySelector('.button7');
+        button.addEventListener('click', function () {
+          img.width = img.width * 1.2;
+        });
+      })();
     </script>
     <script>
       hljs.initHighlightingOnLoad();

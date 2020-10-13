@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Tasks</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css" />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <h3>Задача</h3>
+    <p>Дан инпут:</p>
+    <input id="elem" value="Hare Krishna!" />
+    <div id="elem1" class="aaa bbb ccc"></div>
+    <button class="button_a">1</button>
+    <input id="button1" type="submit" value="text1" />
+    <input id="button2" type="submit" value="text2" />
+    <input id="button3" type="submit" value="text3" />
+    <p class="www">text1</p>
+    <p class="www">text2</p>
+    <p class="www">text3</p>
+    <button class="button4">Push me</button>
+    <button class="button5">1</button>
+    <button class="button6">Push me, please</button>
+    <p id="elem2" class="www ggg zzz">Hello!</p>
+    <div class="box"></div>
+    <button class="button7">Push me</button>
+    <button id="button">click me</button>
+    <div id="elem3"></div>
+    <script>
+      //let input = document.querySelector('#elem');
+      //let button = document.querySelector('.button1');
+      //button.addEventListener('click', function () {
+      //  input.value = 'hello';
+      //});
+      //let elem = document.querySelector('#elem');
+      //elem.addEventListener('focus', function () {
+      //  console.log(elem.value);
+      //});
+      //(function () {
+      //let button = document.querySelector('.button1');
+      //let strOfClasses = document.querySelector('#elem1').className;
+      //let arr = strOfClasses.split(' ');
+      // button.addEventListener('click', () => console.log(arr));
+      //})();
+      (function () {
+        let button = document.querySelector('.button_a');
+        button.addEventListener('click', function () {
+          +this.textContent++;
+        });
+      })();
+      (function () {
+        let button1 = document.querySelector('#button1');
+        let button2 = document.querySelector('#button2');
+        let button3 = document.querySelector('#button3');
+        button1.addEventListener('click', func);
+        button2.addEventListener('click', func);
+        button3.addEventListener('click', func);
+        function func() {
+          console.log(this.value);
+          this.type = 'text';
+          this.value = 'Вы сделали это!!!';
+        }
+      })();
+      (function () {
+        let elems = document.querySelectorAll('.www');
+        let button = document.querySelector('.button4');
+        button.addEventListener('click', () => {
+          for (let el of elems) el.textContent = el.textContent + '!!!';
+        });
+      })();
+      (function () {
+        let elems = document.querySelectorAll('.www');
+        for (let el of elems) {
+          el.addEventListener('click', function () {
+            alert(`Это текст абзаца: ${this.textContent}`);
+          });
+        }
+      })();
+      (function () {
+        let button = document.querySelector('.button5');
+        button.addEventListener('click', func);
+        function func() {
+          +this.textContent++;
+          if (+button.textContent === 10) {
+            this.removeEventListener('click', func);
+            alert('Хватит нажимать!!!');
+          }
+        }
+      })();
+      (function () {
+        let value = document.querySelector('#elem').getAttribute('value');
+        let button6 = addEventListener('click', () => console.log(value));
+      })();
+      (function () {
+        let elem = document.querySelector('#elem2');
+        let length = elem.classList;
+        elem.style.color = 'red';
+        elem.style.backgroundColor = 'yellow';
+        let arr = [];
+        console.log(length);
+        for (let className of length) {
+          arr.push(className);
+          console.log(arr);
+        }
+      })();
+      (function () {
+        let div = document.querySelector('.box');
+        let button = document.querySelector('.button7');
+        button.addEventListener('click', function () {
+          div.style.width = '500px';
+          div.style.height = '50px';
+          div.style.border = '1px solid green';
+        });
+      })();
+      (function () {
+        let elems = document.querySelectorAll('p');
+        for (let elem of elems) {
+          elem.addEventListener('click', function () {
+            this.classList.toggle('colored');
+          });
+        }
+      })();
+      (function () {
+        let button = document.querySelector('#button');
+        let elem = document.querySelector('#elem3');
+        button.addEventListener('click', function () {
+          elem.classList.toggle('active');
+        });
+      })();
+    </script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

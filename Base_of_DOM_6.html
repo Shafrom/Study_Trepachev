@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <input type="text" class="p1" value="10" />
+    <input type="text" class="p1" value="10" />
+    <input type="text" class="p1" value="10" />
+    <p class="p2"></p>
+    <button class="button1">Push me</button>
+    <p></p>
+    <button class="button2">-1</button>
+    <input type="text" class="input3" value="0" />
+    <button class="button3">+1</button>
+    <textarea id="elem">text</textarea>
+    <p class="p3"></p>
+    <p></p>
+    <input class="input2" disabled />
+    <button class="button4">Lock</button>
+    <button class="button5">Unlock</button>
+    <script>
+      (function () {
+        let inputList = document.querySelectorAll('.p1');
+        let input = document.querySelector('.p2');
+        let button = document.querySelector('.button1');
+        button.addEventListener('click', () => {
+          let sum = 0;
+          for (el of inputList) sum += +el.value;
+          input.textContent = sum;
+        });
+      })();
+      (function () {
+        let input = document.querySelector('.input3');
+        let minus = document.querySelector('.button2');
+        let plus = document.querySelector('.button3');
+        minus.addEventListener('click', () => {
+          if (+input.value > 0) input.value--;
+        });
+        plus.addEventListener('click', () => input.value++);
+      })();
+      (function () {
+        let textarea = document.querySelector('#elem');
+        let parag = document.querySelector('.p3');
+        textarea.addEventListener('blur', () => (parag.textContent = textarea.value));
+      })();
+      (function () {
+        let elem = document.querySelector('.input2');
+        let unlock = document.querySelector('.button4');
+        let lock = document.querySelector('.button5');
+        lock.addEventListener('click', () => {
+          elem.disabled = false;
+        });
+        unlock.addEventListener('click', () => {
+          elem.disabled = true;
+        });
+      })();
+    </script>
+  </body>
+</html>

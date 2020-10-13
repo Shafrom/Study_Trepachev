@@ -13,3 +13,16 @@ img {
 .img3 {
   border: 1px solid grey;
 }
+.colored {
+	color: green;
+}
+
+#elem3 {
+	display: none;
+	width: 200px;
+	height: 200px;
+	border: 1px solid green;
+}
+#elem3.active {
+	display: block;
+}
