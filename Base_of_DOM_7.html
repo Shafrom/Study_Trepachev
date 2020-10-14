@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <p></p>
+    <input type="checkbox" id="elem" checked />
+    <button class="button">Uncheck/Check</button>
+    <p></p>
+    <input type="text" class="input1" value="text" />
+    <input type="checkbox" class="check1" />
+    <p class="p1">Чекбокс включен?</p>
+    <p></p>
+    <p>Введите 5 символов</p>
+    <input type="text" class="input2" />
+    <p class="p2"></p>
+    <p class="p3">Вы можете ввести еще символов:</p>
+    <p></p>
+    <input type="text" class="input4" />
+    <input type="text" class="input5" />
+    <p></p>
+    <select id="select">
+      <option value="one">один</option>
+      <option value="two" selected>два</option>
+      <option value="three">три</option>
+    </select>
+    <input type="submit" id="button" />
+    <script>
+      (function () {
+        let elem = document.querySelector('#elem');
+        let check = document.querySelector('.button');
+        check.addEventListener('click', () => (elem.checked = !elem.checked));
+      })();
+      (function () {
+        let input = document.querySelector('.input1');
+        input.addEventListener('change', () => {
+          if (input.value.length < 5) input.style.border = '3px solid green';
+          else input.style.border = '3px solid red';
+        });
+      })();
+      (function () {
+        let checkbox = document.querySelector('.check1');
+        let p = document.querySelector('.p1');
+        checkbox.addEventListener('change', () => {
+          p.textContent = 'Чекбокс включен?';
+          p.textContent += ' ' + checkbox.checked;
+        });
+      })();
+      (function () {
+        let input = document.querySelector('.input2');
+        let p1 = document.querySelector('.p2');
+        let p2 = document.querySelector('.p3');
+        input.addEventListener('input', () => {
+          p1.textContent = input.value;
+          if (input.value.length > 5) p1.textContent = 'Вы превысили разрешенное кол-во символов!';
+          p2.textContent = 'Вы можете ввести еще символов: ';
+          let count = 5 - input.value.length;
+          p2.textContent += ' ' + count;
+          if (count <= 0) p2.textContent = 'Вы можете ввести еще символов: 0';
+        });
+      })();
+      (function () {
+        let input1 = document.querySelector('.input4');
+        let input2 = document.querySelector('.input5');
+        input1.addEventListener('input', () => {
+          if (input1.value.length >= 7) input2.focus();
+          console.log(input1.value.length);
+        });
+      })();
+      (function () {
+        let select = document.querySelector('#select');
+        for (let option of select) {
+          console.log(option.value);
+        }
+        let button = document.querySelector('#button');
+        button.addEventListener('click', function () {
+          console.log(select[select.selectedIndex].value);
+        });
+      })();
+    </script>
+  </body>
+</html>
